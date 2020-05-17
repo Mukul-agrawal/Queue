@@ -2,6 +2,8 @@ package defination;
 
 import adt.QueueADT;
 
+import java.util.NoSuchElementException;
+
 public class MyQueue<E> implements QueueADT<E> {
     private Node<E> front = null;
     private Node<E> rear = null;
@@ -22,7 +24,13 @@ public class MyQueue<E> implements QueueADT<E> {
 
     @Override
     public E remove() {
-        return null;
+        E item = peek();
+        if (item == null)
+            throw new NoSuchElementException();
+        else
+            front = front.next;
+        size--;
+        return item;
     }
 
     @Override
