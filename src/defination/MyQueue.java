@@ -2,33 +2,38 @@ package defination;
 
 import adt.QueueADT;
 
-public class MyQueue<E> implements QueueADT {
+public class MyQueue<E> implements QueueADT<E> {
+    private Node<E> front = null;
+
     @Override
     public boolean offer(Object item) {
         return false;
     }
 
     @Override
-    public Object remove() {
+    public E remove() {
         return null;
     }
 
     @Override
-    public Object peek() {
+    public E peek() {
         return null;
     }
 
     @Override
-    public Object poll() {
+    public E poll() {
         return null;
     }
 
     @Override
-    public Object element() {
+    public E element() {
         return null;
     }
 
     private static class Node<E> {
+        private E data;
+        private Node<E> next;
+
         public Node(E data) {
             this.data = data;
         }
@@ -37,13 +42,9 @@ public class MyQueue<E> implements QueueADT {
             return data;
         }
 
-        private E data;
-
         public Node<E> getNext() {
             return next;
         }
-
-        private Node<E> next;
 
 
     }
