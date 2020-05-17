@@ -4,6 +4,7 @@ import adt.QueueADT;
 
 public class MyQueue<E> implements QueueADT<E> {
     private Node<E> front = null;
+    private Node<E> rear = null;
 
     @Override
     public boolean offer(Object item) {
