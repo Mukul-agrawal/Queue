@@ -8,8 +8,16 @@ public class MyQueue<E> implements QueueADT<E> {
     private int size = 0;
 
     @Override
-    public boolean offer(Object item) {
-        return false;
+    public boolean offer(E item) {
+        if (front == null) {
+            rear = new Node<>(item);
+            front = rear;
+        } else {
+            rear.next = new Node<>(item);
+            rear = rear.next;
+        }
+        size++;
+        return true;
     }
 
     @Override
