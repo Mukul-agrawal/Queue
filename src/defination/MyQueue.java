@@ -27,9 +27,10 @@ public class MyQueue<E> implements QueueADT<E> {
         E item = peek();
         if (item == null)
             throw new NoSuchElementException();
-        else
+        else {
             front = front.next;
-        size--;
+            size--;
+        }
         return item;
     }
 
@@ -43,7 +44,14 @@ public class MyQueue<E> implements QueueADT<E> {
 
     @Override
     public E poll() {
-        return null;
+        E item = peek();
+        if (item == null)
+            return null;
+        else {
+            front = front.next;
+            size--;
+        }
+        return item;
     }
 
     @Override
