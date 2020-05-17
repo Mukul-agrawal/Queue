@@ -56,7 +56,12 @@ public class MyQueue<E> implements QueueADT<E> {
 
     @Override
     public E element() {
-        return null;
+        E item = peek();
+        if (item == null)
+            throw new NoSuchElementException();
+        else {
+            return front.data;
+        }
     }
 
     private static class Node<E> {
