@@ -1,4 +1,4 @@
 package defination;
 
-public class MyQueue {
+public class MyQueue<E> {
 }
