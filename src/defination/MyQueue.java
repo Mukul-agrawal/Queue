@@ -29,6 +29,10 @@ public class MyQueue<E> implements QueueADT {
     }
 
     private static class Node<E> {
+        public Node(E data) {
+            this.data = data;
+        }
+
         public E getData() {
             return data;
         }
